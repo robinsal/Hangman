@@ -15,7 +15,7 @@ import java.io.IOException;
  * Updated Aug 14, 2019
  */
 
-public class GraphicsMaker extends JFrame {
+public class HangmanGUI extends JFrame {
 
 	/**
 	 * The main method to create run our Hangman GUI. Very compact, 
@@ -25,7 +25,7 @@ public class GraphicsMaker extends JFrame {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-        GraphicsMaker hangman = new GraphicsMaker();
+        HangmanGUI hangman = new HangmanGUI();
         hangman.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         hangman.setSize(1000, 1000);
         hangman.setLocationRelativeTo(null);
@@ -100,7 +100,6 @@ public class GraphicsMaker extends JFrame {
 			} else {
     			getMovieTitle();
     			initDisplayedText();
-    			repaint();
 	       
     			for (JButton b: buttons) {
     				b.setEnabled(true);
@@ -108,6 +107,7 @@ public class GraphicsMaker extends JFrame {
 			}
 			
 			playAgain.setEnabled(false);
+			repaint();
 		}
 		
 	}
@@ -125,7 +125,7 @@ public class GraphicsMaker extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 
-    private HangmanMaker hm; 
+    private Hangman hm; 
     private int incorrectGuessCount;
     private String[] dashes;
     
@@ -153,9 +153,9 @@ public class GraphicsMaker extends JFrame {
      * 		if file not present.
      * 
      */
-    public GraphicsMaker() throws IOException {
+    public HangmanGUI() throws IOException {
         super("Hangman: Movie Titles");
-        hm = new HangmanMaker();
+        hm = new Hangman();
         getMovieTitle();
 
         initDisplayedText();

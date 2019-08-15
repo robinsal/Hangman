@@ -3,12 +3,12 @@ import java.io.FileReader;
 import java.util.*;
 
 
-public class HangmanMaker
+public class Hangman
 {
     private ArrayList <String> s;
     private Scanner in;
     
-    public HangmanMaker() throws FileNotFoundException {
+    public Hangman() throws FileNotFoundException {
         s = new ArrayList <String>();
         in = new Scanner(new FileReader("Wordbank"));
     
