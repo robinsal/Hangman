@@ -2,32 +2,47 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
 
-
+/**
+ * A class representing a Hangman object
+ * @author robinsal
+ *
+ */
 public class Hangman
 {
-    private ArrayList <String> s;
+    private ArrayList <String> wordList;
     private Scanner in;
     
     public Hangman() throws FileNotFoundException {
-        s = new ArrayList <String>();
+        wordList = new ArrayList <String>();
         in = new Scanner(new FileReader("Wordbank"));
     
         init();
     }
 
+    /**
+     * adds all words from the word bank to an ArrayList and shuffles the list
+     */
     private void init() {
     	while (in.hasNextLine()) {  
-           s.add(in.nextLine().toUpperCase());
+           wordList.add(in.nextLine().toUpperCase());
         } 
     	
-    	Collections.shuffle(s);
+    	Collections.shuffle(wordList);
     }
 
+    /**
+     * 
+     * @return the next element from the word list
+     */
     public String getNext() {
-        return s.remove(s.size()-1);
+        return wordList.remove(wordList.size()-1);
     }
 
+    /**
+     * 
+     * @return true if list is empty
+     */
     public boolean isEmpty() {
-        return s.isEmpty();
+        return wordList.isEmpty();
     }
 }
