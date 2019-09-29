@@ -7,11 +7,4 @@ Recently, I found this project and touched it up to make it more reasonable. I c
 
 ## See the result
 
-If you'd like to run this code and play the game, feel free to clone this repository, compile the files in the src folder
-using 
-
-`javac Hangman.java HangmanGUI.java`
-
-and then run the program using
-
-`java HangmanGUI`
+If you'd like to run this code and play the game, feel free to clone this repository, and simply navigate to the `bin` folder and run `java HangmanGUI`
