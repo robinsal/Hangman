@@ -14,8 +14,12 @@ public class Hangman
     
     public Hangman() throws FileNotFoundException {
         wordList = new ArrayList <String>();
-        in = new Scanner(new FileReader("Wordbank"));
-    
+        
+        try {
+        	in = new Scanner(new FileReader("Wordbank"));
+        } catch (FileNotFoundException e) {
+        	in = new Scanner(new FileReader("../Wordbank"));
+        }
         init();
     }
 
